@@ -1,0 +1,11 @@
+FROM centos:7.9.2009
+RUN yum update -y
+RUN yum install wget python3 vim net-tools bash-completion  httpd-tools -y
+RUN source /usr/share/bash-completion/bash_completion
+RUN mkdir /app
+ENV LC_ALL=zh_CN.utf8
+ENV LANG=zh_CN.utf8
+ENV LANGUAGE=zh_CN.utf8
+RUN localedef -c -f UTF-8 -i zh_CN zh_CN.utf8
+COPY ./tcp.py /app
+CMD ["python3","/app/tcp.py"]
