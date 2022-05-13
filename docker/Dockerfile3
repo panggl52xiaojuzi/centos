@@ -1,1 +1,1 @@
-FROM registry.cn-hangzhou.aliyuncs.com/magictommy/aliyun
+FROM grafana/ci-build-windows:latest
